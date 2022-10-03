@@ -14,8 +14,19 @@ $('#salvar').on("click", () => {
         task: task,
         hora: hora
     }
-    
-   $.post("salvar.php",data)
+    if(task == "" )
+    {
+        alert("Dados vazios");
+        
+        return;
+    }
+    else
+    {
+        $.post("salvar.php",data)
+
+        
+    }
+ 
 
 })
 
