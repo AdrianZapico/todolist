@@ -20,7 +20,7 @@
 
   </br></br>
 
-  <button id="hidecoments" class="btn btn-primary">Esconder TAREFAS</button>
+  <button id="hidecoments" class="btn btn-primary">Listar tarefas</button>
 
   <div id="myDIV">
 
