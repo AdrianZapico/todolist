@@ -6,14 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/1399a3c061.js" crossorigin="anonymous"></script>
+  <title>Todolist</title>
 </head>
+<i class="fa fa-tasks" aria-hidden="true"></i>
+<body style="background-color: #DFDFDF;">
 
-<body>
 
-
-  <h1>TAREFAS</h1>
-  <input type="text" id="pegartexto" name="task"><br><br>
+  <h1 style="background-color:DodgerBlue">TAREFAS A FAZER</h1>
+  <h4 style="background-color:Red">INSERIR TAREFA NO CAMPO ABAIXO</h4>
+  
+  <textarea type="text" id="pegartexto" name="task" style="width: 400px; height:100px"></textarea><br>
 
   <meta><button id="salvar" class="btn btn-dark">Salvar tarefa</button></meta></br>
   
@@ -21,7 +25,7 @@
 
   </br></br>
 
-  <button id="hidecoments" class="btn btn-primary">Listar tarefas</button>
+  <button id="hidecoments"  class="btn btn-primary">Listar tarefas</button>
 
   <div id="myDIV">
 
