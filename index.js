@@ -14,6 +14,9 @@ $('#salvar').on("click", () => {
         task: task,
         hora: hora
     }
+    
+    alert("Tarefa salva com sucesso!!!");
+   
     if(task == "" )
     {
         alert("Dados vazios");
@@ -23,8 +26,7 @@ $('#salvar').on("click", () => {
     else
     {
         $.post("salvar.php",data)
-
-        
+        location.reload();
     }
  
 
@@ -35,3 +37,10 @@ $('#hidecoments').on("click", () => {
 
 });
 //comentar
+
+$('#delete').on("click", () => {
+   
+    location.reload();
+
+});
+

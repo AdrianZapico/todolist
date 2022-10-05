@@ -12,3 +12,6 @@ $sql = "insert into todolist(task,hora)values(?,?)";
 $stmt = $conn->prepare($sql);
 $stmt->execute([$task, $hora]);
 echo "Salvo com sucesso!!!";
+header("Refresh:1; url=index.php");
+
+

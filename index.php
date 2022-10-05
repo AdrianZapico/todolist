@@ -15,7 +15,8 @@
   <h1>TAREFAS</h1>
   <input type="text" id="pegartexto" name="task"><br><br>
 
-  <button id="salvar" class="btn btn-dark">Salvar tarefa</button></br>
+  <meta><button id="salvar" class="btn btn-dark">Salvar tarefa</button></meta></br>
+  
 
 
   </br></br>
@@ -25,10 +26,13 @@
   <div id="myDIV">
 
     <?php
-    include "list.php"
+    include "list.php";
     ?>
+    <button id='delete' class='btn btn-danger'>Deletar</button>
 
   </div>
+
+ 
 
 
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
