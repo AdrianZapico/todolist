@@ -16,7 +16,7 @@
 
   <h1 style="background-color:DodgerBlue">TAREFAS A FAZER</h1>
   <h4 style="background-color:Red">INSERIR TAREFA NO CAMPO ABAIXO</h4>
-  
+  <input type="hidden" id="taskid">
   <textarea type="text" id="pegartexto" name="task" style="width: 400px; height:100px"></textarea><br>
 
   <meta><button id="salvar" class="btn btn-dark">Salvar tarefa</button></meta></br>

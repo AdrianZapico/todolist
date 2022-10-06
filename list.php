@@ -11,7 +11,7 @@ foreach($stmt->fetchAll() as $row)
    
         echo($id)." - ";
         echo($task)." <button id='delete' onclick='deleteTask($id)' class='btn btn-danger'>Deletar</button>";
-        echo" <button id='update' onclick='updateTask($id,$task)' class='btn btn-warnig'>Alterar</button>";
+        echo" <br><button id='update' onclick='updateTask($id,$task)' class='btn btn-warnig'></button>";
     
 }
 echo"</font></h3>";

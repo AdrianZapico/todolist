@@ -50,10 +50,8 @@ function deleteTask(taskid)
 function updateTask(id,task)
 {
 
-    
-    
-    $.post("update.php",{id:id,task:task})
     location.reload();
+   
 
 }
 
