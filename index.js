@@ -30,7 +30,7 @@ $('#salvar').on("click", () => {
         location.reload();
     }
  
-    alert("Tarefa salva com sucesso!!!");
+   
 })
 
 $('#hidecoments').on("click", () => {
@@ -39,9 +39,21 @@ $('#hidecoments').on("click", () => {
 });
 //comentar
 
-$('#delete').on("click", () => {
-   
+function deleteTask(taskid)
+{
+
+    
+    $.post("delete.php",{taskid:taskid})
     location.reload();
 
-});
+}
+function updateTask(id,task)
+{
+
+    
+    
+    $.post("update.php",{id:id,task:task})
+    location.reload();
+
+}
 

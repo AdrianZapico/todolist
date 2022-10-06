@@ -32,7 +32,7 @@
     <?php
     include "list.php";
     ?>
-    <button id='delete' class='btn btn-danger'>Deletar</button>
+    
 
   </div>
 
