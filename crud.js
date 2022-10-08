@@ -18,7 +18,7 @@ function read() {
     })
 }
 function deleteTask(id){
-    let  deleteConfirm = confirm("Are you sure you want to delete");
+    let  deleteConfirm = confirm("Tem certeza que quer deletar???");
     if(deleteConfirm)
     {
         $.get({
@@ -26,12 +26,13 @@ function deleteTask(id){
             data:{id:id},
             success:(data)=>{
                 
+                dataUpdate();
                 alert(data.sucesso);
-                location.reload();
+                
             },
             error:(data)=>{
                 alert(data.erro);
-                location.reload();
+                dataUpdate();
             }
         
         });
@@ -50,18 +51,22 @@ function saveTasks(){
         task:task,
         hora:hora
     };
+    if(task.length <= 2){
+
+        return alert("Campo vazio!!!")
+    }
 
     $.get({
         url:$(location).attr('href')+"/backend/salvar.php",
         data:objc,
         success:(data)=>{
-            
+            dataUpdate();
             alert(data.sucesso);
-            location.reload();
+           
         },
         error:(data)=>{
             alert(data.erro);
-            location.reload();
+          
         }
     
     });
@@ -72,3 +77,9 @@ $("#saveBtn").on("click",()=>{
     saveTasks();
     
 })
+
+function dataUpdate(){
+    
+    $("#tasks").empty();
+    read();
+}
