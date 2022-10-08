@@ -4,7 +4,7 @@
 
 function read() {
     $.post({
-        url: 'http://localhost/backend/list.php',
+        url: $(location).attr('href')+"/backend/list.php",
         success: data=> {
             data.map(row=>{
                 let deleteBtn = $('<button></button>').text("delete").attr("onclick",`deleteTask(${row.id})`);
@@ -22,7 +22,7 @@ function deleteTask(id){
     if(deleteConfirm)
     {
         $.get({
-            url:"http://localhost/backend/delete.php",
+            url:$(location).attr('href')+"/backend/delete.php",
             data:{id:id},
             success:(data)=>{
                 
@@ -42,3 +42,33 @@ function deleteTask(id){
     }
 }
     
+function saveTasks(){
+ 
+    let task = $("#inputTask").val();
+    let hora = new Date();
+    let objc = {
+        task:task,
+        hora:hora
+    };
+
+    $.get({
+        url:$(location).attr('href')+"/backend/salvar.php",
+        data:objc,
+        success:(data)=>{
+            
+            alert(data.sucesso);
+            location.reload();
+        },
+        error:(data)=>{
+            alert(data.erro);
+            location.reload();
+        }
+    
+    });
+  
+}
+$("#saveBtn").on("click",()=>{
+  
+    saveTasks();
+    
+})

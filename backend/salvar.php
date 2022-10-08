@@ -11,7 +11,7 @@ $hora = $_GET['hora'];
 $sql = "insert into todolist(task,hora)values(?,?)";
 $stmt = $conn->prepare($sql);
 $stmt->execute([$task, $hora]);
-echo json_encode("Salvo com sucesso!!!");
 
+echo json_encode(["sucesso"=>"Salvo com sucesso!!!"]);
 
 
