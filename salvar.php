@@ -1,17 +1,17 @@
 <?php
 
-
+header('Content-Type: application/json; charset=utf-8');
 require("connection.php");
 
-$task = $_POST['task'];
-$hora = $_POST['hora'];
+$task = $_GET['task'];
+$hora = $_GET['hora'];
 
 
 
 $sql = "insert into todolist(task,hora)values(?,?)";
 $stmt = $conn->prepare($sql);
 $stmt->execute([$task, $hora]);
-echo "Salvo com sucesso!!!";
-header("Refresh:1; url=index.php");
+echo json_encode("Salvo com sucesso!!!");
+
 
 

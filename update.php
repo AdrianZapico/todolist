@@ -1,31 +1,25 @@
 <?php
-
+header('Content-Type: application/json; charset=utf-8');
 
 require("connection.php");
 
 
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "todolist";
-try {
-  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-  
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-  $sql = "UPDATE todolist SET task = 'update funcionando'  WHERE id = 100 ";
 
 
-  $stmt = $conn->prepare($sql);
+$id = $_GET['id'];
+$task = $_GET['task'];
 
+$sql = "update todolist set task = ? where id = ?";
 
-  $stmt->execute();
+$stmt = $conn->prepare($sql);
 
-  
-  echo $stmt->rowCount() . " records UPDATED successfully";
-} catch(PDOException $e) {
-  echo $sql . "<br>" . $e->getMessage();
+try{
+  $stmt->execute([$task,$id]);
+
+  echo json_encode("Updatado com sucesso!!!");
+
 }
-
-$conn = null;
-?>
+catch(Exception $e)
+{
+  echo json_encode($e->getMessage()." Erro ao Updatar!!!");
+}
