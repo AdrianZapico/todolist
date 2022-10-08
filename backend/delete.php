@@ -12,10 +12,10 @@ $stmt = $conn->prepare($sql);
 try{
   $stmt->execute([$id]);
 
-  echo json_encode("Excluído com sucesso!!!");
+  echo json_encode(["sucesso"=>"Excluido com sucesso!!!"]);
 
 }
 catch(Exception $e)
 {
-  echo json_encode($e->getMessage()." Erro ao salvar!!!");
+  echo json_encode(["erro"=>$e->getMessage()." Erro ao salvar!!!"]);
 }
