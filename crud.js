@@ -83,3 +83,8 @@ function dataUpdate(){
     $("#tasks").empty();
     read();
 }
+
+function updateTask(id,task){
+    $("#inputId").val(id);
+    $("#inputTask").val(task);
+}
